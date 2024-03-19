@@ -1,0 +1,11 @@
+{application,project,
+             [{optional_applications,[]},
+              {applications,[kernel,stdlib,elixir,logger,ecto_sql,postgrex,
+                             floki]},
+              {description,"project"},
+              {modules,['Elixir.MyApp','Elixir.Project.Application',
+                        'Elixir.Project.Brand','Elixir.Project.Project',
+                        'Elixir.Project.Repo','Elixir.UtmParamsExtractor']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.Project.Application',[]}}]}.
