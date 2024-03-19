@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <%= csrf_meta_tag() %>
+  <link rel="stylesheet" href="<%= static_path(@conn, "/css/index.css") %>">
+  <title>Web Developers</title>
+
+</head>
+<body>
+  <header class="page-header">
+    <div class="main-header px-1">
+      <div class="logo">
+        <h1>Team Work and Space for your Web</h1>
+      </div>
+      <nav>
+        <ul id="addClass">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Pages</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Project</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+        <div class="menu">
+          <i class="bi bi-list"></i>
+        </div>
+        <div class="nav-icon">
+          <div><i class="bi bi-search"></i></div>
+          <button>
+            <img src="<%= static_path(@conn, "/img/toggler.svg") %>" alt="">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <section class="section-1" style="background-image: url('<%= static_path(@conn, "/img/hero-bg.png") %>');">
+    <div style="background: #000000e6;">
+      <div class="section-1-bg">
+        <div>
+          <h1 class="trans-text-bg">WEB <br><span class="trans-text">DESIGN</span> <i>AGENCY</i></h1>
+        </div>
+        <div class="img">
+          <img src="<%= static_path(@conn, "/img/hero-right.png") %>" alt="">
+        </div>
+      </div>
+
+      <div class="section-2 px-1">
+        <img src="<%= static_path(@conn, "/img/hero.jpg") %>" alt="">
+
+        <div class="social">
+          <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i> <span>Facebook</span></a>
+          <a href="https://twitter.com/"><i class="bi bi-twitter"></i> <span>Twitter</span></a>
+          <a href="https://dribbble.com/"><i class="bi bi-dribbble"></i> <span>Dribbble</span></a>
+          <a href="https://www.behance.net/"><i class="bi bi-behance"></i> <span>Behance</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function trackPageView(url) {
+      // send page view to analytics service
+      console.log(`Page viewed: ${url}`);
+    }
+
+    function getFullUrl(window) {
+      const url = `${window.location.protocol}//${window.location.host}${window.location.pathname}`;
+      const searchParams = new URLSearchParams(window.location.search);
+      const utmSource = searchParams.get('utm_source');
+      const utmCampaign = searchParams.get('utm_campaign');
+
+      if (utmSource && utmCampaign) {
+        return `${url}?utm_source=${utmSource}&utm_campaign=${utmCampaign}`;
+      }
+
+      return url;
+    }
+
+    window.onload = function() {
+      const url = getFullUrl(window);
+      trackPageView(url);
+    }
+  </script>
+  <script src="<%= static_path(@conn, "/js/MyprojectAgency.ex"%></script>
+  <script src="<%= static_path(@conn, "/js/index.js"%></script>
+  <script>
+    url = "http://127.0.0.1:5500/index.html"
+    utm_params = get_utm_params(url)
+  </script>
+
+  # Returns: "utm_source=google&utm_campaign=search"
+</body>
+</html>
