@@ -25,10 +25,7 @@ defmodule Project.MixProject do
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.16.2"},
       {:floki, "~> 0.31.0"},
+      {:phoenix, "~> 1.6.0"},
     ]
   end
-
-  defp elixirc_paths(_) do
-  ["lib"]
-end
 end
